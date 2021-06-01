@@ -2,39 +2,40 @@
   padding: 0;
   margin: 0;
 }
+/*img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}*/
 
 a {
   text-decoration: none;
 }
 
-body {
-  width: 1645px;
+.container {
+  width: 1110px;
+  margin: 0 auto 100px;
 }
-
 nav {
-  margin-left: 245px;
-  margin-right: 245px;
-  margin-top: 35px;
+  vertical-align: middle;
+  height: 32px;
 }
 .nav__menu {
   box-sizing: border-box;
-  display: inline-block;
-  text-align: right;
-  width: 70%;
+  display: block;
+  float: right;
   height: 32px;
-  padding: 8px;
-  padding-right: 15px;
+  padding-top: 6px;
 }
 
 .nav__title {
+  display: inline-block;
   box-sizing: border-box;
-  float: left;
   font-size: 30px;
   font-family: 'Roboto';
   color: #515151;
   line-height: 1.067;
-  width: 30%;
-  padding-left: 15px;
+  vertical-align: middle;
 }
 
 .nav__title::first-letter {
@@ -43,27 +44,29 @@ nav {
   text-transform: uppercase;
   line-height: 1.067;
 }
-.nav__menu > a {
+.nav__menu > li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__menu > li:not(:last-child) {
+  margin-right: 30px;
+}
+
+.nav_link {
+  display: block;
   font-size: 14px;
   font-family: 'Open Sans';
   color: rgb(26, 188, 156);
   font-weight: bold;
   text-transform: uppercase;
   line-height: 0.786;
-  margin: 15px;
+  width: auto;
 }
 
-.nav__menu > a:hover {
+.nav_link:hover,
+.nav_link:focus {
   color: blue;
-}
-
-.gallery,
-.blog {
-  box-sizing: border-box;
-  margin-top: 100px;
-  margin-left: 245px;
-  margin-right: 245px;
-  width: 1140px;
 }
 
 .gallery__list,
@@ -78,19 +81,26 @@ nav {
 }
 
 .gallery__card {
-  margin: 15px;
   float: left;
   box-sizing: border-box;
   width: 255px;
   height: 320px;
   background-color: rgb(233, 240, 253);
+  margin: 15px 30px 15px 0px;
 }
 
-.gallery__card:hover .gallery__card__name > h3 {
+.gallery__card:nth-of-type(4n) {
+  margin-right: 0px;
+}
+.gallery__card:nth-last-of-type(-n + 4) {
+  margin-bottom: 0px;
+}
+.gallery__card:hover .gallery__card__name > p,
+.gallery__card:focus .gallery__card__name > p {
   background-color: rgb(26, 188, 156);
 }
-
-.gallery__card:hover .gallery__card__name > span {
+.gallery__card:hover .gallery__card__name > span,
+.gallery__card:focus .gallery__card__name > span {
   background-color: #7fd9c7;
 }
 
@@ -105,7 +115,7 @@ a.gallery__card__name {
   height: 40px;
   width: 255px;
 }
-.gallery__card__name > h3 {
+.gallery__card__name > p {
   height: 40px;
   float: left;
   box-sizing: border-box;
@@ -148,25 +158,31 @@ a.gallery__card__name {
   color: rgb(78, 198, 171);
   width: 165px;
   height: 7px;
-  margin-left: 487px;
+  margin-left: 480px;
 }
 
 .blog__card {
-  margin: 15px;
+  margin: 15px 30px 15px 0px;
   float: left;
   box-sizing: border-box;
   width: 350px;
 }
-
-.blog__card > h3 {
-  margin-top: 15px;
+.blog__card:nth-of-type(3n) {
+  margin-right: 0px;
+}
+.blog__card:nth-last-of-type(-n + 3) {
+  margin-bottom: 0px;
+}
+.blog__name {
+  padding-top: 15px;
   font-size: 18px;
   font-family: 'Open Sans';
   color: rgb(85, 82, 82);
   line-height: 1.444;
+  margin-bottom: 40px;
 }
 
-.blog__card > h3::after {
+.blog__name::after {
   content: '__________________';
   display: block;
   color: rgb(78, 198, 171);
@@ -174,30 +190,23 @@ a.gallery__card__name {
   height: 3px;
 }
 
-.blog__card > p {
-  margin-top: 40px;
+.blog__about {
   font-size: 14px;
   font-family: 'Open Sans';
   color: rgb(85, 82, 82);
   line-height: 1.857;
+  margin-bottom: 15px;
 }
 
-.blog__card > a {
-  box-sizing: border-box;
-  display: inline-block;
-  margin-top: 15px;
+.blog__card button {
+  border: none;
   width: 160px;
   height: 50px;
-  padding-top: 10px;
   border-radius: 3px;
   background-color: rgb(78, 198, 171);
   font-size: 16px;
   font-family: 'Open Sans';
   color: rgb(255, 255, 255);
   line-height: 1.625;
-  text-align: center;
-}
-
-.blog__card > a:hover {
-  background-color: rgb(8, 129, 103);
+  cursor: pointer;
 }
